@@ -3,6 +3,8 @@ title: Windows Bellek Büyümesi
 description: Windows'ta bun sürecinin neden çok sayıda gigabayt RAM'e kadar büyüyebildiği, opencodex'in bugün bu konuda ne yaptığı ve yukarı akış Bun düzeltmeleri gelene kadar seçenekleriniz.
 ---
 
+> Paketlenen çalışma zamanı artık Bun **1.4.4**. Aşağıdaki Bun 1.3.14 gözlemleri ve sorun durumları Temmuz 2026 kayıtlarıdır. Bu güvenlik güncellemesi, akış hatalarının giderildiğini doğrulamaz; korumacı çalışma zamanı kapısı değişmedi.
+
 Bazı Windows kullanıcıları, uzun akış oturumları sırasında opencodex'in
 arkasındaki `bun` sürecinin çok sayıda gigabayt RSS'ye kadar büyüdüğünü
 görmektedir ([#314](https://github.com/lidge-jun/opencodex/issues/314) numaralı
@@ -11,7 +13,7 @@ dürüstçe neler yapabileceğinizi açıklamaktadır.
 
 ## Temel neden: yukarı akış Bun çalışma zamanı sorunları
 
-opencodex, Bun çalışma zamanını (şu anda **1.3.14**) paketler. Bellek büyümesi,
+opencodex, Bun çalışma zamanını (aşağıdaki gözlemler sırasında **1.3.14**) paketler. Bellek büyümesi,
 proxy'deki JavaScript düzeyindeki sızıntılardan değil, bilinen yukarı akış Bun
 sorunlarından kaynaklanmaktadır:
 
