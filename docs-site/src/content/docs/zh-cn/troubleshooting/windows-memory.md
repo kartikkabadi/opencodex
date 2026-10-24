@@ -3,11 +3,13 @@ title: Windows 内存增长
 description: 为什么 bun 进程在 Windows 上会增长到数 GB 内存，opencodex 目前对此做了什么，以及在上游 Bun 修复发布前你可以怎么做。
 ---
 
+> 当前捆绑的运行时为 Bun **1.4.4**。下方 Bun 1.3.14 的观察与问题状态是 2026 年 7 月的历史记录。此次安全更新并未确认这些流式处理错误已修复；保守的运行时门控保持不变。
+
 一些 Windows 用户会看到，opencodex 背后的 `bun` 进程在长时间流式会话期间增长到数 GB 的 RSS（已作为问题 [#314](https://github.com/lidge-jun/opencodex/issues/314) 报告）。本页会如实解释实际发生了什么，以及你可以采取什么措施。
 
 ## 根因：上游 Bun 运行时问题
 
-opencodex 打包了 Bun 运行时（当前为 **1.3.14**）。这类内存增长由已知的上游 Bun 问题驱动，而不是代理中的 JavaScript 级泄漏：
+opencodex 打包了 Bun 运行时（下方观察时为 **1.3.14**）。这类内存增长由已知的上游 Bun 问题驱动，而不是代理中的 JavaScript 级泄漏：
 
 | Bun issue | 状态（检查于 2026-07-23） |
 |---|---|

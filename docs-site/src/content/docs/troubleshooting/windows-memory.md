@@ -3,6 +3,8 @@ title: Windows Memory Growth
 description: Why the bun process can grow to many gigabytes of RAM on Windows, what opencodex does about it today, and your options until the upstream Bun fixes ship.
 ---
 
+> The bundled runtime is now Bun **1.4.4**. The Bun 1.3.14 observations and issue states below are historical (July 2026); this security upgrade does not establish that those stream bugs are fixed. The conservative stream gate is unchanged.
+
 Some Windows users see the `bun` process behind opencodex grow to many
 gigabytes of RSS during long streaming sessions (reported as issue
 [#314](https://github.com/lidge-jun/opencodex/issues/314)). This page explains
@@ -10,7 +12,7 @@ what is actually happening and what you can do about it, honestly.
 
 ## Root cause: upstream Bun runtime issues
 
-opencodex bundles the Bun runtime (currently **1.3.14**). The memory growth is
+The observations below were recorded with bundled Bun **1.3.14**. The memory growth is
 driven by known upstream Bun issues, not by JavaScript-level leaks in the
 proxy:
 

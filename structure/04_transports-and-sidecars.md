@@ -73,7 +73,7 @@ Native passthrough SSE has TWO shapes, selected per request in
   branch[0] through a terminal-aware client relay while branch[1] is
   drained eagerly by `consumeForInspection`/`consumeForResponseLogMetadata`
   for terminal-outcome recording, quota, the passthrough continuation cache,
-  and request logs. This remains the default shape on bundled Bun 1.3.14.
+  and request logs. This remains the default shape on bundled Bun 1.4.4; the conservative runtime gate is unchanged.
 - **Terminal-aware eager bounded relay** (`src/server/relay-eager.ts`). Windows
   uses this single-reader shape for rewrite traffic and for no-rewrite traffic
   selected by `selectEagerPath` in `src/lib/bun-stream-caps.ts`; the latter keeps

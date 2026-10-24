@@ -3,11 +3,13 @@ title: Windows 記憶體成長
 description: 為何 Windows 上的 bun 程序可能成長到數 GB 的 RAM、opencodex 目前如何處理，以及上游 Bun 修復釋出前你有哪些選項。
 ---
 
+> 目前內嵌的 runtime 為 Bun **1.4.4**。下方 Bun 1.3.14 的觀察與問題狀態是 2026 年 7 月的歷史紀錄。此安全更新並未確認這些串流錯誤已修復；保守的 runtime 閘門維持不變。
+
 部分 Windows 使用者會看到 opencodex 背後的 `bun` 程序，在長時間串流工作階段中成長到數 GB 的 RSS（回報為 issue [#314](https://github.com/lidge-jun/opencodex/issues/314)）。本頁誠實說明實際發生的狀況，以及你可以怎麼做。
 
 ## 根本原因：上游 Bun runtime 問題
 
-opencodex 內嵌 Bun runtime（目前為 **1.3.14**）。記憶體成長由已知的上游 Bun 問題驅動，而非代理程式中 JavaScript 層級的洩漏：
+opencodex 內嵌 Bun runtime（下方觀察當時為 **1.3.14**）。記憶體成長由已知的上游 Bun 問題驅動，而非代理程式中 JavaScript 層級的洩漏：
 
 | Bun issue | 狀態（於 2026-07-23 查核） |
 |---|---|
